@@ -4,7 +4,6 @@ import com.example.santagifbackend.dtos.GetCadeauDTO;
 import com.example.santagifbackend.models.Cadeau;
 import com.example.santagifbackend.services.CadeauService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,9 +12,12 @@ import java.util.List;
 @CrossOrigin
 @RequestMapping("cadeaux")
 public class CadeauController {
-    @Autowired
-    CadeauService service;
 
+    private final CadeauService service;
+
+    public CadeauController(CadeauService service) {
+        this.service = service;
+    }
     @GetMapping
     public List<GetCadeauDTO> findAll() {
         return service.findAll();
