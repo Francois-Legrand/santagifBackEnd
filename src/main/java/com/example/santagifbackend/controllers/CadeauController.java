@@ -24,8 +24,8 @@ public class CadeauController {
     public Cadeau save(@RequestBody Cadeau cadeau) {
         return service.save(cadeau);
     }
-    @DeleteMapping
-    public void delete(@RequestBody Cadeau cadeau) {
-        service.delete(cadeau);
+    @DeleteMapping("{id}")
+    public void delete(@PathVariable String id) {
+        service.deleteById(id);
     }
 }

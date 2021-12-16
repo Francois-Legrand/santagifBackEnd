@@ -28,7 +28,7 @@ public class CadeauService {
     public Cadeau save(Cadeau cadeau) {
         return this.repository.save(cadeau);
     }
-    public void delete(Cadeau cadeau) {
-        this.repository.delete(cadeau);
+    public void deleteById(String id) {
+        this.repository.deleteById(id);
     }
 }
