@@ -25,7 +25,7 @@ public class CadeauService {
 
     /**
      * the method collects all the gifts (DTOS)
-     * @return getCadeauDTOS
+     * @return List<getCadeauDTOS>
      */
     public List<GetCadeauDTO> findAll() {
         List<Cadeau> cadeaux = this.repository.findAll();
