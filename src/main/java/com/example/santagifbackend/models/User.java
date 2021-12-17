@@ -8,10 +8,12 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.List;
+
 @Document
 @NoArgsConstructor
 @AllArgsConstructor
-public class Cadeau {
+public class User {
     @Id
     @Getter
     @Setter
@@ -19,15 +21,19 @@ public class Cadeau {
 
     @Getter
     @Setter
-    private String title;
+    private String nom;
 
     @Getter
     @Setter
-    private String image;
+    private String prenom;
 
     @Getter
     @Setter
-    @DBRef
-    private User user;
+    private String role;
+
+    @Getter
+    @Setter
+    @DBRef(lazy=true)
+    private List<Cadeau> cadeaux;
 
 }
